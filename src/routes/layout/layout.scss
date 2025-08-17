@@ -9,23 +9,20 @@
   padding-right: 20px;
   display: flex;
   flex-direction: column;
+  background: var(--background-dark);
 
   @include lg {
-    // background-color: rgb(232, 224, 221);
     max-width: 1280px;
   }
   @include md {
-    // background-color: rgb(229, 232, 237);
     max-width: 768px;
   }
   @include sm {
-    // background-color: rgb(226, 207, 207);
     max-width: 640px;
   }
 
   .content {
-    // flex: 2;
-    // background-color: #fcf5f3;
     height: calc(100vh - 100px);
+    background: transparent;
   }
 }

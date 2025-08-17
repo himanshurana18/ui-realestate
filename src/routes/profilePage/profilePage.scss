@@ -3,6 +3,10 @@
 .profilePage {
   display: flex;
   height: 100%;
+  gap: 20px;
+  background: var(--background-dark);
+  border-radius: 20px;
+  overflow: hidden;
 
   @include md {
     flex-direction: column;
@@ -13,10 +17,27 @@
     flex: 3;
     overflow-y: scroll;
     padding-bottom: 50px;
+    background: linear-gradient(135deg, var(--background-card), var(--background-light));
+    border-radius: 20px;
+    padding: 20px;
 
     @include md {
       flex: none;
       height: max-content;
+    }
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--background-light);
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
     }
 
     .wrapper {
@@ -32,13 +53,25 @@
 
         h1 {
           font-weight: 300;
+          color: var(--text-primary);
+          font-size: 24px;
         }
 
         button {
           padding: 12px 24px;
-          background-color: #fece51;
+          background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+          color: white;
           cursor: pointer;
           border: none;
+          border-radius: 10px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          box-shadow: var(--shadow);
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+          }
         }
       }
 
@@ -46,21 +79,38 @@
         display: flex;
         flex-direction: column;
         gap: 20px;
+        background: var(--background-light);
+        padding: 25px;
+        border-radius: 15px;
+        border: 1px solid var(--border-color);
 
         span {
           display: flex;
           align-items: center;
           gap: 20px;
+          color: var(--text-secondary);
+          
+          b {
+            color: var(--text-primary);
+          }
         }
 
         button {
           width: 100px;
-          background-color: teal;
+          background: linear-gradient(135deg, #ef4444, #dc2626);
           border: none;
           color: white;
           padding: 10px 20px;
           cursor: pointer;
-          border-radius: 5px;
+          border-radius: 8px;
+          font-weight: 500;
+          transition: all 0.3s ease;
+          box-shadow: var(--shadow);
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+          }
         }
 
         img {
@@ -68,14 +118,19 @@
           height: 40px;
           border-radius: 50%;
           object-fit: cover;
+          border: 2px solid var(--primary-color);
+          box-shadow: var(--shadow);
         }
       }
     }
   }
   .chatContainer {
     flex: 2;
-    background-color: #fcf5f3;
+    background: var(--background-card);
     height: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 
     @include md {
       flex: none;

@@ -3,9 +3,15 @@
 .homePage {
   display: flex;
   height: 100%;
+  background: linear-gradient(135deg, var(--background-dark) 0%, var(--background-card) 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 
   .textContainer {
     flex: 3;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(16, 185, 129, 0.05));
+    padding: 40px;
 
     .wrapper {
       padding-right: 100px;
@@ -29,22 +35,53 @@
 
       .title {
         font-size: 64px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+        line-height: 1.1;
 
         @include lg {
           font-size: 48px;
         }
       }
+      
+      p {
+        font-size: 18px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        font-weight: 400;
+      }
 
       .boxes {
         display: flex;
         justify-content: space-between;
+        gap: 30px;
 
         @include sm {
           display: none;
         }
+        
+        .box {
+          background: linear-gradient(135deg, var(--background-card), var(--background-light));
+          padding: 30px 20px;
+          border-radius: 20px;
+          text-align: center;
+          box-shadow: var(--shadow);
+          border: 1px solid var(--border-color);
+          transition: all 0.3s ease;
+          
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+          }
+        }
 
         h1 {
           font-size: 36px;
+          color: var(--primary-color);
+          font-weight: 700;
 
           @include lg {
             font-size: 32px;
@@ -54,6 +91,8 @@
         h2 {
           font-size: 20px;
           font-weight: 300;
+          color: var(--text-secondary);
+          margin-top: 10px;
         }
       }
     }
@@ -61,10 +100,11 @@
 
   .imgContainer {
     flex: 2;
-    background-color: #fcf5f3;
+    background: linear-gradient(135deg, var(--background-light), var(--background-card));
     position: relative;
     display: flex;
     align-items: center;
+    border-radius: 0 20px 20px 0;
 
     @include md {
       display: none;
@@ -74,6 +114,8 @@
       width: 115%;
       position: absolute;
       right: 0;
+      filter: brightness(1.1) contrast(1.1) saturate(1.2);
+      border-radius: 20px;
 
       @include lg {
         width: 105%;

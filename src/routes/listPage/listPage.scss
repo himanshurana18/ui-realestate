@@ -3,10 +3,17 @@
 .listPage {
   display: flex;
   height: 100%;
+  gap: 20px;
+  background: var(--background-dark);
+  border-radius: 20px;
+  overflow: hidden;
 
   .listContainer {
     flex: 3;
     height: 100%;
+    background: linear-gradient(135deg, var(--background-card), var(--background-light));
+    border-radius: 20px;
+    padding: 20px;
 
     .wrapper {
       height: 100%;
@@ -16,15 +23,34 @@
       gap: 50px;
       overflow-y: scroll;
       padding-bottom: 50px;
+      
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: var(--background-light);
+        border-radius: 10px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 10px;
+      }
     }
   }
   .mapContainer {
     flex: 2;
     height: 100%;
-    background-color: #fcf5f3;
+    background: var(--background-card);
+    border-radius: 20px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 
-    // @include md {
-    //   display: none;
-    // }
+    .map {
+      border-radius: 15px;
+      overflow: hidden;
+    }
   }
 }

@@ -1,10 +1,38 @@
 .newPostPage {
   height: 100%;
   display: flex;
+  background: var(--background-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  gap: 20px;
 
   .formContainer {
     flex: 3;
     overflow: scroll;
+    background: linear-gradient(135deg, var(--background-card), var(--background-light));
+    border-radius: 20px;
+    padding: 20px;
+    
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--background-light);
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
+    
+    h1 {
+      color: var(--text-primary);
+      margin-bottom: 30px;
+      font-size: 28px;
+      font-weight: 600;
+    }
 
     .wrapper {
       margin: 30px 50px 100px 0px;
@@ -14,6 +42,11 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 20px;
+        background: var(--background-card);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
 
         .item {
           width: 30%;
@@ -22,36 +55,86 @@
           gap: 5px;
 
           label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
           }
 
           input {
             padding: 20px;
-            border-radius: 5px;
-            border: 1px solid gray;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--background-light);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            
+            &::placeholder {
+              color: var(--text-muted);
+            }
+            
+            &:focus {
+              outline: none;
+              border-color: var(--primary-color);
+              box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+            }
           }
 
           select {
-            padding: 19px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            background: var(--background-light);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            
+            &:focus {
+              outline: none;
+              border-color: var(--primary-color);
+              box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+            }
           }
 
           &.description {
             width: 100%;
             height: 320px;
+            
+            .ql-toolbar {
+              background: var(--background-light);
+              border-color: var(--border-color);
+              border-radius: 10px 10px 0 0;
+            }
+            
+            .ql-container {
+              background: var(--background-card);
+              border-color: var(--border-color);
+              border-radius: 0 0 10px 10px;
+            }
 
             .quill > .ql-container > .ql-editor{
               height: 200px;
               font-size: 16px;
+              color: var(--text-primary);
             }
           }
         }
         .sendButton {
           width: 30%;
-          border-radius: 5px;
+          border-radius: 10px;
           border: none;
-          background-color: teal;
+          background: linear-gradient(135deg, var(--secondary-color), #059669);
           color: white;
           font-weight: bold;
           cursor: pointer;
+          font-size: 16px;
+          transition: all 0.3s ease;
+          box-shadow: var(--shadow);
+          
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+          }
         }
       }
     }
@@ -59,18 +142,41 @@
 
   .sideContainer {
     flex: 2;
-    background-color: #fcf5f3;
+    background: var(--background-card);
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 20px;
 
     img {
       width: 50%;
       height: 180px;
       object-fit: cover;
-      border-radius: 5px;
+      border-radius: 15px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+    
+    .cloudinary-button {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
     }
   }
 }

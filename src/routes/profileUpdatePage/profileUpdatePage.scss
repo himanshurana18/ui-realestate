@@ -1,16 +1,37 @@
 .profileUpdatePage {
   height: 100%;
   display: flex;
+  background: var(--background-dark);
+  border-radius: 20px;
+  overflow: hidden;
+  gap: 20px;
 
   .formContainer {
     flex:3;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, var(--background-card), var(--background-light));
+    padding: 40px;
+    
     form {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      background: var(--background-card);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      min-width: 400px;
+      
+      h1 {
+        color: var(--text-primary);
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 600;
+      }
 
       .item {
         display: flex;
@@ -18,38 +39,89 @@
         gap: 5px;
 
         label {
+          color: var(--text-secondary);
+          font-weight: 500;
+          font-size: 14px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
         }
 
         input {
           padding: 20px;
-          border-radius: 5px;
-          border: 1px solid gray;
+          border-radius: 10px;
+          border: 1px solid var(--border-color);
+          background: var(--background-light);
+          color: var(--text-primary);
+          font-size: 16px;
+          transition: all 0.3s ease;
+          
+          &::placeholder {
+            color: var(--text-muted);
+          }
+          
+          &:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+          }
         }
       }
       button {
         padding: 20px;
-        border-radius: 5px;
+        border-radius: 10px;
         border: none;
-        background-color: teal;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
         color: white;
         font-weight: bold;
         cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+        
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-lg);
+        }
       }
     }
   }
 
   .sideContainer {
     flex: 2;
-    background-color: #fcf5f3;
+    background: var(--background-card);
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    padding: 20px;
 
     .avatar{
       width: 50%;
       object-fit: cover;
+      border-radius: 15px;
+      border: 2px solid var(--primary-color);
+      box-shadow: var(--shadow);
+    }
+    
+    .cloudinary-button {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
     }
   }
 }

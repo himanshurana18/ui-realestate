@@ -5,6 +5,8 @@
   height: 350px;
   display: flex;
   gap: 20px;
+  border-radius: 20px;
+  overflow: hidden;
 
   @include responsive.sm {
     height: 280px;
@@ -16,7 +18,8 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: black;
+    background: rgba(15, 15, 35, 0.95);
+    backdrop-filter: blur(20px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,9 +30,17 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(99, 102, 241, 0.1);
+      }
 
       img {
         width: 50px;
+        filter: brightness(1.5);
+        transition: all 0.3s ease;
 
         @include responsive.md {
           width: 30px;
@@ -42,15 +53,26 @@
         &.right {
           transform: rotate(180deg);
         }
+        
+        &:hover {
+          transform: scale(1.1);
+          filter: brightness(2);
+        }
       }
     }
     .imgContainer {
       flex: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
 
       img {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
         object-fit: cover;
+        border-radius: 15px;
+        box-shadow: var(--shadow-lg);
       }
     }
 
@@ -58,11 +80,19 @@
       position: absolute;
       top: 0;
       right: 0;
-      color: white;
+      color: var(--text-primary);
       font-size: 36px;
       font-weight: bold;
       padding: 50px;
       cursor: pointer;
+      background: rgba(99, 102, 241, 0.1);
+      border-radius: 0 0 0 20px;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: rgba(99, 102, 241, 0.2);
+        color: var(--primary-color);
+      }
     }
   }
 
@@ -70,8 +100,15 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow);
+    }
   }
 
   .bigImage {

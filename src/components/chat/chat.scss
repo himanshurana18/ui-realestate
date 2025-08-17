@@ -2,6 +2,9 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: var(--background-card);
+  border-radius: 15px;
+  overflow: hidden;
 
   .messages {
     flex: 1;
@@ -9,47 +12,83 @@
     flex-direction: column;
     gap: 20px;
     overflow-y: scroll;
+    padding: 20px;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: var(--background-light);
+      border-radius: 10px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 10px;
+    }
 
     h1 {
       font-weight: 300;
+      color: var(--text-primary);
+      text-transform: capitalize;
     }
 
     .message {
-      background-color: white;
+      background: var(--background-light);
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       gap: 20px;
       cursor: pointer;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+        background: var(--background-card);
+      }
 
       img {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         object-fit: cover;
+        border: 2px solid var(--primary-color);
       }
 
       span {
         font-weight: bold;
+        color: var(--text-primary);
+      }
+      
+      p {
+        color: var(--text-secondary);
       }
     }
   }
 
   .chatBox {
     flex: 1;
-    background-color: white;
+    background: var(--background-light);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    margin: 20px;
+    overflow: hidden;
 
     .top {
-      background-color: #f7c14b85;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
       padding: 20px;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      color: white;
 
       .user {
         display: flex;
@@ -61,10 +100,23 @@
           height: 30px;
           border-radius: 50%;
           object-fit: cover;
+          border: 2px solid white;
         }
       }
       .close {
         cursor: pointer;
+        background: rgba(255, 255, 255, 0.2);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: rgba(255, 255, 255, 0.3);
+        }
       }
     }
     .center {
@@ -74,43 +126,96 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+      background: var(--background-card);
+      
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: var(--background-light);
+        border-radius: 10px;
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 10px;
+      }
 
       .chatMessage{
         width: 50%;
+        background: var(--background-light);
+        padding: 12px 16px;
+        border-radius: 15px;
+        border: 1px solid var(--border-color);
+        
+        p {
+          color: var(--text-primary);
+          margin-bottom: 5px;
+        }
 
         &.own{
           align-self: flex-end;
           text-align: right;
+          background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+          
+          p {
+            color: white;
+          }
+          
+          span {
+            color: rgba(255, 255, 255, 0.8);
+          }
         }
 
         span{
           font-size: 12px;
-          background-color: #f7c14b39;
+          background: var(--background-light);
           padding: 2px;
           border-radius: 5px;
+          color: var(--text-muted);
         }
       }
     }
     .bottom {
-      border-top: 2px solid #f7c14b85;
+      border-top: 1px solid var(--border-color);
       height: 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: var(--background-light);
 
       textarea{
         flex:3;
         height: 100%;
         border: none;
         padding: 20px;
+        background: transparent;
+        color: var(--text-primary);
+        resize: none;
+        
+        &::placeholder {
+          color: var(--text-muted);
+        }
+        
+        &:focus {
+          outline: none;
+        }
       }
 
       button{
         flex:1;
-        background-color: #f7c14b85;
+        background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+        color: white;
         height: 100%;
         border: none;
         cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: linear-gradient(135deg, var(--primary-hover), var(--primary-color));
+        }
       }
     }
   }
