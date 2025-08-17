@@ -1,5 +1,5 @@
 import "./singlePage.scss";
-import Slider from "../../components/slider/Slider";
+import Slider from "../../components/slider/slider";
 // import { singlePostData } from "../../lib/dummydata";
 import Map from "../../components/map/Map";
 import { useLoaderData } from "react-router-dom";
